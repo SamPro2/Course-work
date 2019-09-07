@@ -1,0 +1,20 @@
+﻿extends layout
+
+block content
+	h2 Поздравляем!
+	div
+			span #{client_name}, Вы успешно забронировали автомобиль 
+			each car in order2 
+				span #{car.Manufacturer} #{car_name} с #{date1} по #{date2}!
+	p
+	div
+			span К оплате 
+			each car in order2
+				span #{car.Cost}₽.
+	p
+	div
+	h4 Мы свяжемся с Вами в ближайшее время! ;)
+	p
+	div
+	a(href='/') На главную
+	img(src='/images/car66.jpg' height=498 width=1200)

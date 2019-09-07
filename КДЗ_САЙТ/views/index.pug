@@ -1,0 +1,21 @@
+﻿extends layout
+
+block content
+    h1= 'Добро пожаловать!'
+    p Сайт проката автомобилей
+    div
+        form(action='/search' method="post" enctype='multipart/form-data')
+            div
+                label Начало 
+                input(type='Date' name='date1')
+            div
+                label Конец 
+                input(type='Date' name='date2')
+            p
+            div
+                button(type='submit') Найти автомобиль
+            p
+            div
+
+    a(href='/stock') Остатки автомобилей на сегодня
+    img(src='/images/car6.jpg' height=auto width=auto)

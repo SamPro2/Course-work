@@ -1,0 +1,52 @@
+﻿extends layout
+
+block content
+	h1 Список автомобилей
+	div
+			form(action='/udata' method="post" enctype='multipart/form-data')
+				div
+				span Выбранные даты:
+				div
+				span с 
+					input(type='Date' name='date1' value=date1)
+				span  по 
+					input(type='Date' name='date2' value=date2)
+				p
+				div
+				table
+					thead
+						th Автомобили в наличии:
+						each car in carlist
+							tr
+								td #{car.Manufacturer} #{car.Name} #{car.Cost}₽
+				p
+				div
+					label Выберите автомобиль: 
+					select(name='car_name')
+							each car in carlist
+								option(value=car.Name) #{car.Manufacturer} #{car.Name} #{car.Cost}₽
+				p
+				div
+				h4 Введите свои данные:
+				p
+				div
+					span Имя         
+						input(type="text" name='client_name' value='')
+				div
+					span Фамилия	 
+						input(type="text" name='client_lastname' value='')
+				div
+					span Номер телефона 
+						input(type="number" name='client_phone' value='')
+				p
+				div
+					button(type='submit') Забронировать
+				p
+				div
+				a(href='/') На главную
+				div
+				a(href='/search2') Вернуться к выбору деталей комплектации 
+				div
+	p
+	div
+	img(src='/images/Ggg.jpg' height=107 width=317)

@@ -1,0 +1,22 @@
+﻿extends layout
+block content
+	h1 Свободные машины на сегодня
+	p Всего автомобилей: #{length2}
+	div
+
+				table
+					thead
+							th ID
+							th Manufacter
+							th Model Name
+					each car in allcars2
+							tr
+								td #{car.CarId} 
+								td #{car.Manufacturer} 
+								td #{car.ModelName}
+	p
+	div
+	a(href='/') На главную
+	
+
+	

@@ -1,0 +1,49 @@
+﻿extends layout
+
+block content
+    h1 Выберите нужную комплектацию автомобиля
+    p
+        div
+            a(href='/') На главную
+        div
+            form(action='/find' method="post" enctype='multipart/form-data')
+                div
+                    label Выбранные даты:
+                div
+                label с 
+                    input(type='Date' name='date1' value=date1)
+                label  по 
+                    input(type='Date' name='date2' value=date2)
+                p
+                div
+
+                    label Тип коробки 
+                    select(name='transmission')
+                        each variable in variables.filter(t => t.Description=='Тип коробки')
+                            option(value=variable.EquipmentId) #{variable.Type}
+                div
+                    label Класс автомобиля 
+                    select(name='clas')
+                        each variable in variables.filter(t => t.Description=='Класс автомобиля')
+                            option(value=variable.EquipmentId) #{variable.Type}
+                div
+                    label Тип кузова 
+                    select(name='body')
+                        each variable in variables.filter(t => t.Description=='Тип кузова')
+                            option(value=variable.EquipmentId) #{variable.Type}
+                div
+                    label Количество мест 
+                    select(name='seat')
+                        each variable in variables.filter(t => t.Description=='Количество мест')
+                            option(value=variable.EquipmentId) #{variable.Type}
+                div
+                    label Кондиционер 
+                    select(name='conditioner')
+                        each variable in variables.filter(t => t.Description=='Кондиционер')
+                            option(value=variable.EquipmentId) #{variable.Type}
+                p
+                div
+                    button(type='submit') Поиск машин
+    p
+    div
+    img(src='/images/Ggg.jpg' height=107 width=317)
